@@ -3,7 +3,7 @@
 > **Kompetisi Website Nasional IT RUSH 2026**  
 > **Subtema:** Kesehatan Masyarakat  
 > **Nama Ketua Tim:** Pendri Mikola
-> **Live Website:** [Isi URL Live Website]  
+> **Live Website:** https://nusacare.upahku.my.id/  
 
 ---
 
