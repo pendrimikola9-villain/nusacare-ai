@@ -2,8 +2,8 @@
 
 > **Kompetisi Website Nasional IT RUSH 2026**  
 > **Subtema:** Kesehatan Masyarakat  
-> **Nama Tim:** [Isi Nama Tim Kamu]  
-> **Live Website:** [Isi Link Live Website Kamu setelah Deploy]  
+> **Nama Ketua Tim:** Pendri Mikola
+> **Live Website:** [Isi URL Live Website]  
 
 ---
 
@@ -31,7 +31,7 @@ Platform ini menghubungkan pemantauan kesehatan keluarga secara mandiri langsung
 ---
 
 ## 3. Akses Akun Demo (Untuk Evaluasi Dewan Juri)
-Sesuai ketentuan kompetisi, aplikasi menyediakan fitur **1-Click Demo Login** di halaman utama (`/`) maupun halaman masuk (`/login`) sehingga juri dapat langsung menguji kedua peran tanpa perlu registrasi manual:
+Aplikasi menyediakan fitur **1-Click Demo Login** di halaman utama (`/`) maupun halaman masuk (`/login`) sehingga juri dapat langsung menguji kedua peran tanpa perlu registrasi manual:
 
 | Peran Pengguna | Cara Akses | Halaman Tujuan Utama |
 | :--- | :--- | :--- |
@@ -64,3 +64,46 @@ Sesuai ketentuan kompetisi, aplikasi menyediakan fitur **1-Click Demo Login** di
 │   ├── landing.blade.php              # Halaman utama publik & 1-Click Demo Login
 │   └── ...                            # 9 halaman terpadu Zona Auth, Portal Warga, & Portal Medis
 └── routes/web.php                     # Pengaturan routing 3 zona akses aplikasi
+```
+
+---
+
+## 5. Deklarasi Library, Aset Open-Source & AI Coding Assistant
+Memenuhi ketentuan Bab V Poin 5 Buku Pedoman IT RUSH 2026, seluruh komponen pihak ketiga dan asisten AI yang digunakan dalam pengembangan proyek ini adalah sebagai berikut:
+
+| Kategori | Nama Komponen / Layanan | Tujuan Penggunaan |
+| :--- | :--- | :--- |
+| **Framework & HTTP Client** | Laravel Framework & Guzzle HTTP | Kerangka kerja backend MVC, autentikasi, dan komunikasi REST API ke Gemini. |
+| **UI & Styling** | Tailwind CSS & Google Fonts (*Plus Jakarta Sans*) | Tata letak antarmuka responsif dan tipografi medis modern. |
+| **Visualisasi Data & Peta** | Chart.js & Leaflet.js (OpenStreetMap) | Grafik perkembangan tanda vital/mental dan peta interaktif radar wabah kelurahan. |
+| **Aset Ikon** | Heroicons (SVG Open-Source) | Ikon navigasi dan indikator fitur antarmuka. |
+| **Mesin AI Aplikasi** | Google Gemini API (`gemini-2.5-flash`) | Pemrosesan analisis gizi foto, skrining gejala multimodal, dan generator program sehat. |
+| **AI Coding Assistant** | Google Gemini | Membantu penataan struktur kode, validasi debugging, serta penyusunan dokumentasi teknis dan `README.md`. |
+
+---
+
+## 6. Panduan Instalasi Lokal
+1. Clone repository ini:
+   ```bash
+   git clone [Isi URL Repository GitHub]
+   cd nusacare-ai
+   ```
+2. Pasang dependensi PHP dan salin konfigurasi environment:
+   ```bash
+   composer install
+   cp .env.example .env
+   php artisan key:generate
+   ```
+3. Atur koneksi database dan masukkan kunci API Gemini pada file `.env`:
+   ```env
+   DB_DATABASE=nusacare_ai
+   DB_USERNAME=root
+   DB_PASSWORD=
+
+   GEMINI_API_KEY=your_google_gemini_api_key
+   ```
+4. Jalankan migrasi database dan server lokal:
+   ```bash
+   php artisan migrate --seed
+   php artisan serve
+   ```
